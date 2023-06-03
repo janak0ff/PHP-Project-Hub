@@ -1,0 +1,11 @@
+Miigom OTP - PHP Phone Number Authentication v1.0
+
+Installation:
+
+change fb-config.php
+
+Firebase tutorial:
+
+Step 1: Create Firebase Project (web app)
+Step 2: Enable Firebase Phone Auth
+Step 3: Copy SDK config
