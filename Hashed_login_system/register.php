@@ -1,30 +1,41 @@
-<?php if (isset($_POST['register'])) { 
+<?php if (isset($_POST['register'])) {
 
-// Connect to the database 
-$mysqli = new mysqli("localhost", "root", "", "login_system"); 
+  // Connect to the database 
+  $mysqli = new mysqli("localhost", "root", "", "login_system");
 
-// Check for errors 
-if ($mysqli->connect_error) { die("Connection failed: " . $mysqli->connect_error); } 
+  // Check for errors 
+  if ($mysqli->connect_error) {
+    die("Connection failed: " . $mysqli->connect_error);
+  }
 
-// Prepare and bind the SQL statement 
-$stmt = $mysqli->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)"); $stmt->bind_param("sss", $username, $email, $password); 
+  // Prepare and bind the SQL statement 
+  $stmt = $mysqli->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
+  $stmt->bind_param("sss", $username, $email, $password);
 
-// Get the form data 
-$username = $_POST['username']; $email = $_POST['email']; $password = $_POST['password']; 
+  // Get the form data 
+  $username = $_POST['username'];
+  $email = $_POST['email'];
+  $password = $_POST['password'];
 
-// Hash the password 
-$password = password_hash($password, PASSWORD_DEFAULT); 
+  // Hash the password 
+  $password = password_hash($password, PASSWORD_DEFAULT);
 
-// Execute the SQL statement 
-if ($stmt->execute()) { echo "New account created successfully!"; } else { echo "Error: " . $stmt->error; } 
+  // Execute the SQL statement 
+  if ($stmt->execute()) {
+    echo "New account created successfully!";
+  } else {
+    echo "Error: " . $stmt->error;
+  }
 
-// Close the connection 
-$stmt->close(); $mysqli->close(); }
+  // Close the connection 
+  $stmt->close();
+  $mysqli->close();
+}
 ?>
 
 
 <form action="register.php" method="post">
-  <label for="username">Username:</label> 
+  <label for="username">Username:</label>
   <input id="username" name="username" required="" type="text" />
   <label for="email">Email:</label>
   <input id="email" name="email" required="" type="email" />
