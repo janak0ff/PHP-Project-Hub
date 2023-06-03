@@ -2,12 +2,12 @@
 <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
 <script>
     var firebaseConfig = {
-        // apiKey: "**********",
-        // authDomain: "**********",
-        // projectId: "**********",
-        // storageBucket: "**********",
-        // messagingSenderId: "**********",
-        // appId: "**********"
+        apiKey: "**********",
+        authDomain: "**********",
+        projectId: "**********",
+        storageBucket: "**********",
+        messagingSenderId: "**********",
+        appId: "**********"
        
     };
     firebase.initializeApp(firebaseConfig);
