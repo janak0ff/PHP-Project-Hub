@@ -37,6 +37,7 @@ header("Location: dashboard.php"); exit; } else { echo "Incorrect password!"; } 
 $stmt->close(); $mysqli->close(); }
 ?>
 
+
 <form action="login.php" method="post">
   <label for="username">Username:</label>
   <input id="username" name="username" required="" type="text" />
