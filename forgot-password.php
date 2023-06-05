@@ -50,7 +50,7 @@ if (isset($_POST['submit'])) {
                 //Content
                 $mail->isHTML(true);                                  //Set email format to HTML
                 $mail->Subject = 'no reply';
-                $mail->Body    = 'Here is the verification link <b><a href="http://localhost/login/change-password.php?reset='.$code.'">http://localhost/login/change-password.php?reset='.$code.'</a></b>';
+                $mail->Body    = 'Here is the verification link <b><a href="http://localhost/complete-login-register-form-with-email-verification/change-password.php?reset='.$code.'">http://localhost/login/change-password.php?reset='.$code.'</a></b>';
 
                 $mail->send();
                 echo 'Message has been sent';
