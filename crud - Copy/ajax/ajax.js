@@ -18,7 +18,6 @@
 			}
 		});
 	});
-
 	$(document).on('click','.update',function(e) {
 		var id=$(this).attr("data-id");
 		var name=$(this).attr("data-name");
@@ -52,13 +51,11 @@
 			}
 		});
 	});
-
 	$(document).on("click", ".delete", function() { 
 		var id=$(this).attr("data-id");
 		$('#id_d').val(id);
 		
 	});
-
 	$(document).on("click", "#delete", function() { 
 		$.ajax({
 			url: "backend/save.php",
@@ -75,7 +72,6 @@
 			}
 		});
 	});
-
 	$(document).on("click", "#delete_multiple", function() {
 		var user = [];
 		$(".user_checkbox:checked").each(function() {
@@ -108,7 +104,6 @@
 			}  
 		} 
 	});
-	
 	$(document).ready(function(){
 		$('[data-toggle="tooltip"]').tooltip();
 		var checkbox = $('table tbody input[type="checkbox"]');
